@@ -17,4 +17,4 @@ jobs:
           token: ${{ secrets.ZEROCRACY_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repositories: renyamamoto2026-cmyk/zc-fund
-          factbase: zc-fund.fb
+          factbase: zcfund.fb
