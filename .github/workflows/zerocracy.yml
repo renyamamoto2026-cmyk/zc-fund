@@ -1,0 +1,20 @@
+name: zerocracy
+'on':
+  workflow_dispatch:
+  schedule:
+    - cron: '42 * * * *'
+concurrency:
+  group: zerocracy
+  cancel-in-progress: false
+jobs:
+  zerocracy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: zerocracy/judges-action@0.17.21
+        with:
+          token: ${{ secrets.ZEROCRACY_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repositories: renyamamoto2026-cmyk/zc-fund
+          factbase: zc-fund.fb
